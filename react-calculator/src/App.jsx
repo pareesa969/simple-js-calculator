@@ -1,11 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-/**
- * Simple calculator engine
- * Supports: + - * /
- * No eval() — safe for React compiler & CI pipelines
- */
+
 function calculate(expression) {
   const operators = ["+", "-", "*", "/"];
 
