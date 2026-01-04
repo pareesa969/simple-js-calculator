@@ -8,7 +8,7 @@ This project demonstrates **core React fundamentals**, DOM interaction, theme to
 ## 🚀 Live Demo
 
 👉 **Deployed on GitHub Pages**  
-https://<your-username>.github.io/<repo-name>/
+https://github.com/pareesa969/simple-js-calculator.git
 
 ---
 
@@ -49,3 +49,14 @@ simple-react-calculator/
 ├── index.html
 ├── package.json
 └── vite.config.js
+
+
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/pareesa969/simple-js-calculator.git
