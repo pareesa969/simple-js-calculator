@@ -36,3 +36,16 @@ https://<your-username>.github.io/<repo-name>/
 
 ## 📂 Project Structure
 
+simple-react-calculator/
+├── public/
+├── src/
+│ ├── App.jsx
+│ ├── App.css
+│ ├── main.jsx
+│ └── index.css
+├── .github/
+│ └── workflows/
+│ └── deploy.yml
+├── index.html
+├── package.json
+└── vite.config.js
