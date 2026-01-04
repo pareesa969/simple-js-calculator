@@ -1,19 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-
 
 function calculate(expression) {
   const operators = ["+", "-", "*", "/"];
-
-  // Find the first operator used
   const operator = operators.find(op => expression.includes(op));
 
-  // If no operator, return input as-is
   if (!operator) return expression;
 
   const parts = expression.split(operator);
-
-  // Prevent invalid expressions like "5+"
   if (parts.length !== 2) return "Error";
 
   const num1 = Number(parts[0]);
@@ -22,25 +16,26 @@ function calculate(expression) {
   if (isNaN(num1) || isNaN(num2)) return "Error";
 
   switch (operator) {
-    case "+":
-      return (num1 + num2).toString();
-    case "-":
-      return (num1 - num2).toString();
-    case "*":
-      return (num1 * num2).toString();
-    case "/":
-      return num2 === 0 ? "Error" : (num1 / num2).toString();
-    default:
-      return "Error";
+    case "+": return (num1 + num2).toString();
+    case "-": return (num1 - num2).toString();
+    case "*": return (num1 * num2).toString();
+    case "/": return num2 === 0 ? "Error" : (num1 / num2).toString();
+    default: return "Error";
   }
 }
 
 function App() {
   const [input, setInput] = useState("");
+  const [isDark, setIsDark] = useState(false);
 
-  /**
-   * Handles all button clicks
-   */
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [isDark]);
+
   const handleClick = (value) => {
     if (value === "C") {
       setInput("");
@@ -64,7 +59,15 @@ function App() {
 
   return (
     <div className="calculator">
-      <h2>React Calculator</h2>
+      {/* Theme Toggle */}
+      <button
+        onClick={() => setIsDark(!isDark)}
+        style={{ marginBottom: "10px" }}
+      >
+        {isDark ? "🌞 Light Mode" : "🌙 Dark Mode"}
+      </button>
+
+      <h2>Simple JS Calculator</h2>
 
       <input
         type="text"
